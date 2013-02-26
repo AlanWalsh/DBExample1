@@ -37,7 +37,7 @@ $fh.ready(function() {
         act:'listInfo',
        },
       function(res) {
-        for (int i = 0; i < res.data.length; i++) {
+        for (int i = 0; i < res.length; i++) {
           var row = res.data.fields.name;
           document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
         };
