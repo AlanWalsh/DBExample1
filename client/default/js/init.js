@@ -29,22 +29,19 @@ $fh.ready(function() {
       }
     );
     
-      document.getElementById('run_button').onclick = function() {
+      document.getElementById('listbutton').onclick = function() {
     // Invoke a cloud action call to get the remote configuration
     // See: http://docs.feedhenry.com/wiki/Actions
     $fh.act(
       {
-        act:'storeInfo',
-        req: {
-          name : 'Eoin',
-          work : 'Feedhenry'
-        }
-      },
+        act:'listInfo',
+       },
       function(res) {
-        var name = res.data.fields.name;
-        var work = res.data.fields.work;
-        document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
-      },
+        for (int i = 0; i < res.data.length; i++) {
+          var row = res.data.fields.name;
+          document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
+        }
+       },
       function(code,errorprops,params) {
         alert('An error occured: ' + code + ' : ' + errorprops);
       }
