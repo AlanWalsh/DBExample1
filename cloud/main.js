@@ -33,6 +33,6 @@ exports.listInfo = function(params, callback) {
   } else {
     console.log(JSON.stringify(data))
   }
-  return callback(null, {data: data});
+  return callback(null, data);
 });
 }
