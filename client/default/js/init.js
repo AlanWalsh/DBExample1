@@ -40,7 +40,7 @@ $fh.ready(function() {
         for (int i = 0; i < res.data.length; i++) {
           var row = res.data.fields.name;
           document.getElementById('cloudConfig').innerHTML = "<p>Name: " + name + "<br/>Work: "+work+"</p>";
-        }
+        };
        },
       function(code,errorprops,params) {
         alert('An error occured: ' + code + ' : ' + errorprops);
